@@ -14,52 +14,33 @@
     <input class="form-control form-control-lg" type="text" name="text", placeholder="พิมพ์คำที่ต้องการ" required/>
     <br><br>
     <button value="Submit" class="btn btn-primary" onclick="$('#loading').show();">Generate</button>
+  
   </form>
   <div id="loading" style="display:none; text-align: center;">
-    <img src="static/loading.gif" alt="" />...รอพระสวดแปปนึงโยม...</div>
+    <img src="{{ url_for('static',    filename='loading.gif') }}" alt="" />...รอพระสวดแปปนึงโยม...</div>
   <br>
   <br>
-  <div>
-    <div class="bd-example-snippet bd-code-snippet"><div class="bd-example m-0 border-0">
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h4 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            มนต์บทที่ 1
-          </button>
-        </h4>
-        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" >
-          <div class="accordion-body">
-            <p style="text-align: center;">{{ output_1 }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h4 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            มนต์บทที่ 2
-          </button>
-        </h4>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p style="text-align: center;">{{ output_2 }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h4 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            มนต์บทที่ 3
-          </button>
-        </h4>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p style="text-align: center;">{{ output_3 }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div></div>
-  </div>
+
+  <div class="row">
+		<div class="col-md-4">
+			<h3 style="text-align: center;">
+				มนต์บทที่ 1
+			</h3>
+			<p style="text-align: center;"> {{ output_1 }}	</p>
+		</div>
+		<div class="col-md-4">
+			<h3 style="text-align: center;">
+				มนต์บทที่ 2
+			</h3>
+			<p style="text-align: center;"> {{ output_2 }}	</p>
+		</div>
+		<div class="col-md-4">
+			<h3 style="text-align: center;">
+				มนต์บทที่ 3
+			</h3>
+			<p style="text-align: center;"> {{ output_3 }}	</p>
+		</div>
+	</div>
+</div>
   
 {% endblock %}
